@@ -35,6 +35,12 @@ const NAV_ITEMS: Array<{ id: ActiveTab; label: string }> = [
   { id: 'execution', label: 'Tasks and campaigns' },
 ];
 
+const PAGE_TITLES = {
+  dashboard: 'Performance',
+  diagnosis: 'Diagnosis',
+  execution: 'Tasks and campaigns',
+} as const;
+
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
   const [executionSection, setExecutionSection] =
@@ -127,9 +133,9 @@ export default function App() {
     );
   }, [data]);
 
-  const pageHeadline = useMemo(() => {
+  const pageSummary = useMemo(() => {
     if (!data || !analytics) {
-      return 'CampusFest 2026 Growth Center';
+      return '';
     }
 
     if (activeTab === 'dashboard') {
@@ -325,12 +331,18 @@ export default function App() {
           {/* Page Header with "21 days to go" sticker */}
           <header className="mb-8 pb-6 border-b border-[#DDD5C4] flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-4xl space-y-2">
-              <span className="calm-sticker">
-                21 days to go
-              </span>
+              {analytics && (
+                <span className="calm-sticker">
+                  {analytics.summary.daysRemaining}{' '}
+                  {analytics.summary.daysRemaining === 1 ? 'day' : 'days'} to go
+                </span>
+              )}
               <h1 className="font-display text-3xl sm:text-4xl font-bold text-[#1F1B16] leading-tight headline-balance">
-                {pageHeadline}
+                {PAGE_TITLES[activeTab]}
               </h1>
+              {data && analytics && (
+                <p className="text-base text-[#1F1B16] tabular-nums">{pageSummary}</p>
+              )}
               <p className="text-sm text-[#4F4A3F] tabular-nums">
                 {contextSubtitle}
               </p>
