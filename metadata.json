@@ -1,0 +1,6 @@
+{
+  "name": "Growth Center — CampusFest 2026",
+  "description": "Attendee-growth campaign analytics, bottleneck diagnosis, and execution tracker for CampusFest 2026 in Bengaluru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
