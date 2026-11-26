@@ -1127,6 +1127,8 @@ async function runToolBody(
               name: c.campaign.name,
               owner: c.campaign.owner,
               status: d.status,
+              decision: d.decision,
+              decision_reason: d.decisionReason,
               is_planned_no_data: c.isPlanned,
               bottlenecks: d.bottlenecks,
               flags: {

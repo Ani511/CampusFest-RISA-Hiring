@@ -115,9 +115,13 @@ export interface CampaignComputed {
 
 export type DiagnosisStatus = 'On track' | 'At risk' | 'Underperforming' | 'Planned';
 
+export type CampaignDecision = 'Scale' | 'Keep' | 'Change' | 'Stop';
+
 export interface DiagnosisItem {
   computed: CampaignComputed;
   status: DiagnosisStatus;
+  decision: CampaignDecision | null;
+  decisionReason: string;
   bottlenecks: string[];
   hasFunnelBottleneck: boolean;
   hasCancelAvgBottleneck: boolean;

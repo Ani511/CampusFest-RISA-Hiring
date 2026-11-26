@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { ArrowDown, ArrowUp } from 'lucide-react';
 import {
+  DECISION_RULES,
   formatInr,
   formatNumber,
   formatPct,
@@ -23,6 +24,13 @@ interface DiagnosisTabProps {
 }
 
 type StatusFilter = 'all' | 'Underperforming' | 'At risk' | 'On track';
+
+const DECISION_COLORS = {
+  Scale: '#1E7A6F',
+  Keep: '#3B4A8C',
+  Change: '#8A5A00',
+  Stop: '#B3261E',
+} as const;
 
 function buildPlainEnglishVerdict(item: DiagnosisItem): string {
   const c = item.computed;
@@ -170,6 +178,14 @@ export const DiagnosisTab: React.FC<DiagnosisTabProps> = ({
         </div>
       </section>
 
+      <p className="text-sm text-[#4F4A3F]">
+        Decision rules: <strong>Stop</strong> if below {DECISION_RULES.underperformingPct}% of target and cost per expected
+        attendee is over {DECISION_RULES.stopCostMultiple}x the average (or money is spent with no expected attendees).{' '}
+        <strong>Change</strong> if otherwise below {DECISION_RULES.onTrackPct}%, or a bottleneck is flagged.{' '}
+        <strong>Scale</strong> if at {DECISION_RULES.onTrackPct}%+ with no bottleneck, cost at or below average and budget left.{' '}
+        <strong>Keep</strong> otherwise.
+      </p>
+
       {/* Filter Bar: Simple text tabs with 2px indigo underline */}
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#ECE6D8] pb-3">
         <div className="flex flex-wrap items-center gap-6">
@@ -250,6 +266,18 @@ export const DiagnosisTab: React.FC<DiagnosisTabProps> = ({
                 <p className="text-lg text-[#1F1B16] leading-relaxed font-normal">
                   {verdict}
                 </p>
+
+                {item.decision && (
+                  <p className="text-sm text-[#1F1B16] leading-relaxed tabular-nums">
+                    <span
+                      className="mr-2 inline-block px-2.5 py-0.5 text-[13px] font-bold rounded-full border"
+                      style={{ borderColor: DECISION_COLORS[item.decision], color: DECISION_COLORS[item.decision] }}
+                    >
+                      {item.decision}
+                    </span>
+                    {item.decisionReason}
+                  </p>
+                )}
 
                 {/* (c) Three columns with NO boxes: What is going wrong | Last 7 days vs previous | Key numbers */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">

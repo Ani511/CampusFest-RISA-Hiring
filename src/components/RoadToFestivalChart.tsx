@@ -112,11 +112,12 @@ export const RoadToFestivalChart: React.FC<RoadToFestivalChartProps> = ({
     }
 
     const maxPointVal = points.reduce((m, p) => Math.max(m, p.cumulative), 0);
-    const refMax = selectedRow
-      ? Math.max(selectedRow.campaign.target_registrations || 0, selectedRow.campaign.target_attendees || 0)
-      : Math.max(settings.total_target_base || 0, settings.total_target_stretch || 0);
+    // The curve plots registrations, so only registration targets belong on this axis
+    const registrationTarget = selectedRow
+      ? selectedRow.campaign.target_registrations || 0
+      : acquisitionRows.reduce((s, r) => s + (r.campaign.target_registrations || 0), 0);
 
-    const rawMaxY = Math.max(maxPointVal, refMax, 50);
+    const rawMaxY = Math.max(maxPointVal, registrationTarget, 50);
     const step = rawMaxY > 2000 ? 500 : rawMaxY > 600 ? 200 : 100;
     const maxY = Math.ceil((rawMaxY * 1.08) / step) * step;
 
@@ -127,6 +128,7 @@ export const RoadToFestivalChart: React.FC<RoadToFestivalChartProps> = ({
       asOfDate,
       eventDate,
       maxY,
+      registrationTarget,
       dailyPace,
       actualAtAsOf: running,
       projectedEndReg: points.length > 0 ? points[points.length - 1].cumulative : running,
@@ -290,7 +292,12 @@ export const RoadToFestivalChart: React.FC<RoadToFestivalChartProps> = ({
                 <span className="tabular-nums font-semibold text-[#1F1B16]">
                   {formatNumber(Math.round(chartData.projectedEndReg))}
                 </span>{' '}
-                registrations (dashed line).
+                registrations (dashed line). Projected attendees, including walk-ins:{' '}
+                <span className="tabular-nums font-semibold text-[#1F1B16]">
+                  {formatNumber(Math.round(summary.totalProjectedAttendees))}
+                </span>{' '}
+                against a base target of {formatNumber(settings.total_target_base)} and a stretch target of{' '}
+                {formatNumber(settings.total_target_stretch)}.
               </>
             )}
           </p>
@@ -376,83 +383,31 @@ export const RoadToFestivalChart: React.FC<RoadToFestivalChartProps> = ({
             );
           })}
 
-          {/* Reference lines */}
-          {!selectedRow ? (
-            <>
-              {settings.total_target_base > 0 && (
-                <g>
-                  <line
-                    x1={PAD.left}
-                    y1={yAt(settings.total_target_base)}
-                    x2={W - PAD.right}
-                    y2={yAt(settings.total_target_base)}
-                    stroke="#6C757D"
-                    strokeWidth={1.5}
-                    strokeDasharray="4 4"
-                  />
-                  <text
-                    x={W - PAD.right - 12}
-                    y={yAt(settings.total_target_base) - 8}
-                    textAnchor="end"
-                    fill="#4F4A3F"
-                    fontSize="14"
-                    fontWeight="600"
-                    style={{ fontVariantNumeric: 'tabular-nums' }}
-                  >
-                    Base target: 2,050 attendees
-                  </text>
-                </g>
-              )}
-              {settings.total_target_stretch > 0 && (
-                <g>
-                  <line
-                    x1={PAD.left}
-                    y1={yAt(settings.total_target_stretch)}
-                    x2={W - PAD.right}
-                    y2={yAt(settings.total_target_stretch)}
-                    stroke="#6C757D"
-                    strokeWidth={1.5}
-                    strokeDasharray="4 4"
-                  />
-                  <text
-                    x={W - PAD.right - 12}
-                    y={yAt(settings.total_target_stretch) - 8}
-                    textAnchor="end"
-                    fill="#4F4A3F"
-                    fontSize="14"
-                    fontWeight="600"
-                    style={{ fontVariantNumeric: 'tabular-nums' }}
-                  >
-                    Stretch target: 2,432
-                  </text>
-                </g>
-              )}
-            </>
-          ) : (
-            selectedRow.campaign.target_registrations > 0 && (
-              <g>
-                <line
-                  x1={PAD.left}
-                  y1={yAt(selectedRow.campaign.target_registrations)}
-                  x2={W - PAD.right}
-                  y2={yAt(selectedRow.campaign.target_registrations)}
-                  stroke="#6C757D"
-                  strokeWidth={1.5}
-                  strokeDasharray="4 4"
-                />
-                <text
-                  x={W - PAD.right - 12}
-                  y={yAt(selectedRow.campaign.target_registrations) - 8}
-                  textAnchor="end"
-                  fill="#4F4A3F"
-                  fontSize="14"
-                  fontWeight="600"
-                  style={{ fontVariantNumeric: 'tabular-nums' }}
-                >
-                  Campaign target: {formatNumber(selectedRow.campaign.target_registrations)}
-                </text>
-              </g>
-            )
+          {/* Reference line: registration target */}
+          {chartData.registrationTarget > 0 && (
+            <g>
+              <line
+                x1={PAD.left}
+                y1={yAt(chartData.registrationTarget)}
+                x2={W - PAD.right}
+                y2={yAt(chartData.registrationTarget)}
+                stroke="#6C757D"
+                strokeWidth={1.5}
+                strokeDasharray="4 4"
+              />
+              <text
+                x={W - PAD.right - 12}
+                y={yAt(chartData.registrationTarget) - 8}
+                textAnchor="end"
+                fill="#4F4A3F"
+                fontSize="14"
+                fontWeight="600"
+                style={{ fontVariantNumeric: 'tabular-nums' }}
+              >
+                {selectedRow ? 'Campaign registration target' : 'Registration target (all campaigns)'}:{' '}
+                {formatNumber(chartData.registrationTarget)}
+              </text>
+            </g>
           )}
 
           {/* Today marker */}

@@ -304,6 +304,13 @@ export const DashboardTab: React.FC<DashboardTabProps> = ({
               {formatPct(summary.projectedVsBasePct)} of base target ({formatNumber(settings.total_target_base)}),{' '}
               {formatPct(summary.projectedVsStretchPct)} of stretch ({formatNumber(settings.total_target_stretch)}).
             </p>
+            {settings.venue_capacity_per_day > 0 && (
+              <p className="mt-2 text-[14px] text-[#4F4A3F] leading-snug tabular-nums">
+                Venue holds {formatNumber(settings.venue_capacity_per_day)} per day. Projection needs at least{' '}
+                {Math.ceil(summary.totalProjectedAttendees / settings.venue_capacity_per_day)} day(s); stretch needs{' '}
+                {Math.ceil(settings.total_target_stretch / settings.venue_capacity_per_day)}.
+              </p>
+            )}
           </article>
 
           <article className="calm-card p-6 flex flex-col justify-between">

@@ -1,5 +1,6 @@
 import type {
   Campaign,
+  CampaignDecision,
   CampaignComputed,
   DailyMetric,
   DashboardSummary,
@@ -358,6 +359,65 @@ export function computeGrowthAnalytics(
   };
 }
 
+// Scale / keep / change / stop thresholds. Keep these in step with slide 3 and the README.
+export const DECISION_RULES = {
+  onTrackPct: 90,
+  underperformingPct: 60,
+  stopCostMultiple: 1.25,
+} as const;
+
+export function decideCampaign(
+  c: CampaignComputed,
+  avgCost: number | null,
+  bottleneckCount: number
+): { decision: CampaignDecision | null; decisionReason: string } {
+  if (c.isPlanned) {
+    return { decision: null, decisionReason: 'No metrics logged yet.' };
+  }
+  const pct = c.projectedPctOfTarget;
+  if (pct === null) {
+    return { decision: null, decisionReason: 'No attendee target set.' };
+  }
+  const cost = c.costPerExpectedAttendeeToDate;
+  const attainment = `Projected ${formatPct(pct)} of target`;
+  const costText =
+    cost !== null && avgCost !== null
+      ? `cost per expected attendee ${formatInr(cost)} vs ${formatInr(avgCost)} average`
+      : 'cost per expected attendee not available';
+
+  const spentWithNoAttendees = c.spend > 0 && c.expectedAttendeesToDate <= 0;
+  const tooExpensive =
+    cost !== null &&
+    avgCost !== null &&
+    avgCost > 0 &&
+    cost > avgCost * DECISION_RULES.stopCostMultiple;
+
+  if (pct < DECISION_RULES.underperformingPct && (tooExpensive || spentWithNoAttendees)) {
+    return { decision: 'Stop', decisionReason: `${attainment}; ${costText}.` };
+  }
+  if (pct < DECISION_RULES.onTrackPct) {
+    return { decision: 'Change', decisionReason: `${attainment}; ${costText}.` };
+  }
+  if (bottleneckCount > 0) {
+    return {
+      decision: 'Change',
+      decisionReason: `${attainment}, but ${bottleneckCount} bottleneck${bottleneckCount === 1 ? ' is' : 's are'} flagged.`,
+    };
+  }
+  const cheapEnough = cost !== null && avgCost !== null && cost <= avgCost;
+  const hasBudget = c.campaign.budget - c.spend > 0;
+  if (cheapEnough && hasBudget) {
+    return {
+      decision: 'Scale',
+      decisionReason: `${attainment}; ${costText}; ${formatInr(c.campaign.budget - c.spend)} unspent.`,
+    };
+  }
+  return {
+    decision: 'Keep',
+    decisionReason: `${attainment}; ${costText}${hasBudget ? '' : '; no budget left'}.`,
+  };
+}
+
 export function computeDiagnosis(campaignRows: CampaignComputed[]): {
   diagnosis: DiagnosisItem[];
   avgIdToRegPct: number | null;
@@ -378,6 +438,12 @@ export function computeDiagnosis(campaignRows: CampaignComputed[]): {
   const sumLast7Canc = activeWithLast7Conf.reduce((s, r) => s + r.last7Cancelled, 0);
   const avgLast7CancelRatePct =
     sumLast7Conf > 0 ? (sumLast7Canc / sumLast7Conf) * 100 : null;
+
+  // Average cost across active acquisition campaigns (excludes enabler spend)
+  const activeRows = acquisitionRows.filter((r) => !r.isPlanned);
+  const activeSpend = activeRows.reduce((s, r) => s + r.spend, 0);
+  const activeExpected = activeRows.reduce((s, r) => s + r.expectedAttendeesToDate, 0);
+  const avgCost = activeExpected > 0 ? activeSpend / activeExpected : null;
 
   const diagnosis: DiagnosisItem[] = acquisitionRows.map((c) => {
     let status: DiagnosisStatus;
@@ -449,6 +515,7 @@ export function computeDiagnosis(campaignRows: CampaignComputed[]): {
     return {
       computed: c,
       status,
+      ...decideCampaign(c, avgCost, bottlenecks.length),
       bottlenecks,
       hasFunnelBottleneck,
       hasCancelAvgBottleneck,
