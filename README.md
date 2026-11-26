@@ -10,8 +10,7 @@ Live app: https://campus-fest-risa-hiring.vercel.app/
 
 ### Why Bengaluru?
 
-Bengaluru was selected as the proposed host city because it is a Tier 1
-city with a dense college base and a strong student-event culture. The
+Bengaluru was selected as the proposed host city because it is a Tier 1 city with a dense college base and a strong student-event culture. Bengaluru Urban has 1,148 colleges, the most of any Indian district, according to [Zee News reporting on AISHE 2023-24](https://zeenews.india.com/education/50-districts-30-of-indias-colleges-the-hidden-geography-of-higher-education-3060810.html). The
 growth plan therefore focuses on campus-led distribution, student
 referrals, college partnerships and relevant student communities.
 
@@ -24,21 +23,19 @@ claim that any college has confirmed a partnership.
 The plan uses the supplied CampusFest 2025 dataset as its historical
 benchmark and sets two 2026 planning scenarios.
 
-  Funnel stage                      2025 actual   2026 base   2026 stretch
-  ---------------------------- ---------------- ----------- --------------
-  Identified external people              3,625       3,625          4,345
-  Registrations                           2,800       2,800          3,356
-  Registered attendees           1,925 (68.75%)       1,925          2,307
-  Walk-ins                                  125         125            125
-  **Unique attendees**                **2,050**   **2,050**      **2,432**
+| Funnel stage | 2025 actual | 2026 base | 2026 stretch |
+|---|---|---|---|
+| Identified external people | 3,625 | 3,625 | 4,345 |
+| Registrations | 2,800 | 2,800 | 3,356 |
+| Registered attendees | 1,925 (68.75%) | 1,925 | 2,307 |
+| Walk-ins | 125 | 125 | 125 |
+| **Unique attendees** | **2,050** | **2,050** | **2,432** |
 
 The stretch scenario targets 382 additional unique attendees, an 18.6%
 increase over the base case. It assumes 2,307 registered attendees plus
 125 walk-ins.
 
-The base case retains the 2025 actual attendance level. The stretch case
-requires stronger acquisition and show-up performance; it is a planning
-scenario, not a guaranteed forecast.
+The base case retains the 2025 actual attendance level. The funnel table shows what the stretch target would need from acquisition alone, holding show-up at 68.75%, identified-to-registered at 77.2% and walk-ins at 125. The five growth bets below are a second route to the same total, combining new acquisition with a higher show-up rate. It is a planning scenario, not a guaranteed forecast.
 
 ### Historical channel benchmarks
 
@@ -46,15 +43,17 @@ The supplied synthetic 2025 dataset provides the following channel-level
 attendee and spend-per-attendee benchmarks used to prioritise the 2026
 plan.
 
-  Audience source          2025 attendees   Spend per attendee (SBRM)
-  ---------------------- ---------------- ---------------------------
-  Referrals                           275                         ₹69
-  Organic search                      195                         ₹72
-  College partnerships                385                         ₹81
-  Community groups                    165                         ₹97
-  Ambassadors                         390                        ₹108
-  Paid social                         340                        ₹274
-  Creators                            175                        ₹337
+| Audience source | 2025 attendees | Spend per attendee |
+|---|---|---|
+| Referrals | 275 | ₹69 |
+| Organic search | 195 | ₹72 |
+| College partnerships | 385 | ₹81 |
+| Community groups | 165 | ₹97 |
+| Ambassadors | 390 | ₹108 |
+| Paid social | 340 | ₹274 |
+| Creators | 175 | ₹337 |
+
+Spend per attendee = channel spend / unique verified external attendees attributed to that channel. Walk-ins (125) are not attributed to any campaign.
 
 The historical figures favour referrals, organic search and college
 partnerships on attributed cost per attendee. Paid social and creator
@@ -86,41 +85,26 @@ benchmark.
 
 ### Five ranked growth bets
 
-The five initiatives are ranked by estimated incremental attendees per
-₹1,000 of additional spend. The plan assumes that added spend is 2× less
-efficient than the 2025 benchmark.
+The five initiatives are ranked by estimated incremental attendees per ₹1,000 of additional spend. For the four acquisition bets, the plan assumes added spend is half as efficient as the 2025 benchmark (cost per attendee doubles). The show-up booster is estimated separately.
 
-  --------------------------------------------------------------------------------------
-           Rank Growth idea              Budget   Gross extra Timeline   Test and
-                                                    attendees            primary KPI
-  ------------- ----------------- ------------- ------------- ---------- ---------------
-              1 Show-up booster:        ₹10,000            91 Days 1--21 Use a holdout
-                WhatsApp                                                 group; test
-                reconfirmation,                                          whether show-up
-                QR pass and                                              improves from
-                friend-group                                             68.75% to 72%
-                reminders                                                
+| Rank | Growth idea | Budget | Gross extra attendees | Per ₹1,000 | Timeline | Test and primary KPI |
+|---|---|---|---|---|---|---|
+| 1 | Show-up booster: WhatsApp reconfirmation, QR pass and friend-group reminders | ₹10,000 | 91 | 9.1 | Days 1–21 | Holdout group; show-up from 68.75% to 72% |
+| 2 | Referral squads: reward a referral when the friend attends | ₹15,000 | 109 | 7.3 | Days 1–14 | Cost per expected attendee |
+| 3 | College club group passes | ₹25,000 | 154 | 6.2 | Days 1–14 | Pilot across three colleges; group confirmations |
+| 4 | Community group takeovers with opt-out | ₹5,000 | 26 | 5.2 | Days 4–14 | Sign-up and opt-out rates |
+| 5 | Ambassador campus sprints | ₹15,000 | 69 | 4.6 | Days 4–18 | Registrations per ambassador |
+|  | **Total** | **₹70,000** | **449 gross** |  |  |  |
 
-              2 Referral squads:        ₹15,000           109 Days 1--14 Track cost per
-                reward a referral                                        expected
-                when the friend                                          attendee
-                attends                                                  
+Calculations:
 
-              3 College club            ₹25,000           154 Days 1--14 Pilot across
-                group passes                                             three colleges;
-                                                                         track group
-                                                                         confirmations
-
-              4 Community group          ₹5,000            26 Days 4--14 Track sign-up
-                takeovers with                                           and opt-out
-                opt-out                                                  rates
-
-              5 Ambassador campus       ₹15,000            69 Days 4--18 Track
-                sprints                                                  registrations
-                                                                         per ambassador
-
-                **Total**           **₹70,000** **449 gross**            
-  --------------------------------------------------------------------------------------
+- Show-up booster: 2,800 registrations × (72% − 68.75%) = 91
+- Referral squads: ₹15,000 / (₹69 × 2) = 109
+- College passes: ₹25,000 / (₹81 × 2) = 154
+- Community takeovers: ₹5,000 / (₹97 × 2) = 26
+- Ambassador sprints: ₹15,000 / (₹108 × 2) = 69
+- Net: 449 × 85% = 382, giving 2,050 + 382 = 2,432
+- Budget cap: ₹44,000 moved from paid social and creators loses about 149 attendees (₹44,000 / ₹295 blended cost), giving 2,432 − 149 = 2,283
 
 A 15% overlap discount is applied to the 449 gross incremental attendees
 to account for people reached by more than one initiative. This gives an
@@ -160,28 +144,15 @@ referral rewards, unique tracking links and opt-out controls.
 The presentation defines early signals and decision thresholds for each
 initiative.
 
-  -----------------------------------------------------------------------------
-  Initiative   Early signal               Scale          Change            Stop
-  ------------ ---------------- --------------- --------------- ---------------
-  Show-up      Reconfirmation              70%+         50--69%       Under 50%
-  booster      rate                                             
+| Initiative | Early signal | Scale | Change | Stop |
+|---|---|---|---|---|
+| Show-up booster | Reconfirmation rate | 70%+ | 50–69% | Under 50% |
+| Referral squads | Cost per expected attendee | ₹138 or less | ₹139–173 | Over ₹173 |
+| College passes | Cost per expected attendee | ₹162 or less | ₹163–203 | Over ₹203 |
+| Community takeovers | Cost per expected attendee | ₹194 or less | ₹195–243 | Over ₹243 |
+| Ambassador sprints | Cost per expected attendee | ₹216 or less | ₹217–270 | Over ₹270 |
 
-  Referral     Cost per            ₹138 or less       ₹139--173       Over ₹173
-  squads       expected                                         
-               attendee                                         
-
-  College      Cost per            ₹162 or less       ₹163--203       Over ₹203
-  passes       expected                                         
-               attendee                                         
-
-  Community    Cost per            ₹194 or less       ₹195--243       Over ₹243
-  takeovers    expected                                         
-               attendee                                         
-
-  Ambassador   Cost per            ₹216 or less       ₹217--270       Over ₹270
-  sprints      expected                                         
-               attendee                                         
-  -----------------------------------------------------------------------------
+These initiative thresholds are applied by the team; the dashboard automates only the campaign rules below.
 
 The broader campaign rules in the dashboard are:
 
@@ -237,38 +208,23 @@ are estimates based on the proposed reallocation. - Venue capacity must
 be validated against the selected venue's permitted capacity and the
 distribution of attendance across event days.
 
-3. **Research limitation** The presentation's Bengaluru rationale is
-qualitative. It does not include a sourced campus-by-campus market-size
+3. **Research limitation** Apart from the college count, the Bengaluru rationale is qualitative. It does not include a sourced campus-by-campus market-size
 calculation or evidence of confirmed institutional partnerships. Those
 should be validated before treating the audience opportunity as a
 measured market.
 
 ### Research references
 
-The following sources can support further validation of Bengaluru's
-higher-education ecosystem and the cited campus-festival examples. The
-festival examples establish that these institutions have hosted or
-promoted relevant events; they do not establish a partnership with
-CampusFest.
+The festival links show that these institutions have hosted or promoted such events. They do not establish a partnership with CampusFest.
 
-1.  Ministry of Education, Government of India --- AISHE reports and
-    higher-education statistics:
-    https://www.pib.gov.in/PressReleasePage.aspx?PRID=2282525
-2.  New Indian Express --- Bengaluru Urban college count based on AISHE
-    2023--24:
-    https://www.newindianexpress.com/cities/bengaluru/2026/Jul/14/karnataka-bengaluru-lead-in-higher-education
-3.  CHRIST University --- InBloom: https://inbloom.christuniversity.in/
-4.  St. Joseph's College of Commerce --- Cultural Facilities / Dhwani:
-    https://web.sjcc.edu.in/Cultural_Facilities.php
-5.  Jyoti Nivas College --- Scintillation:
-    https://scintillation.jyotinivas.org/
-6.  Mount Carmel College --- Cul-AH 2026 brochure:
-    https://mountcarmeluniversity.edu.in/wp-content/uploads/2026/02/cul-ah-brochure-26.pdf
-7.  PES University --- MAAYA: https://clubs.pes.edu/maaya/about/
-8.  BMS College of Commerce and Management --- Samskruthi:
-    https://www.bmsccm.ac.in/menu/happenings/samskruthi.html
-
-
+1. [Careers360: AISHE 2023-24 report summary](https://news.careers360.com/aishe-2023-24-higher-education-enrolment-reaches-4-50-crore-female-enrolment-rises-42-percentage-since-2014-15)
+2. [Zee News: district-wise college counts from AISHE 2023-24](https://zeenews.india.com/education/50-districts-30-of-indias-colleges-the-hidden-geography-of-higher-education-3060810.html)
+3. [CHRIST University: InBloom](https://inbloom.christuniversity.in/)
+4. [St. Joseph's College of Commerce: Dhwani](https://www.sjcc.edu.in/Cultural_Facilities.php)
+5. [Jyoti Nivas College: Scintillation](https://jyotinivas.org/style/events/2024/college/JNC%20Scintillation.pdf)
+6. [Mount Carmel College: Cul-Ah 2026 brochure](https://mountcarmeluniversity.edu.in/wp-content/uploads/2026/02/cul-ah-brochure-26.pdf)
+7. [PES University: MAAYA](https://www.clubs.pes.edu/maaya/about)
+8. [News Karnataka: Samskruthi 2025 at BMS](https://newskarnataka.com/bengaluru/samskruthi-2025-wraps-up-with-thrills-talent-tasty-bites-at-bms-fest/07042025/)
 
 ## What the product does
 
@@ -329,7 +285,7 @@ Stored in Supabase.
 - Current campaign: `settings`, `campaigns`, `daily_metrics`, `tasks`
 - 2025 historical data: `orig_campaigns`, `orig_daily_marketing`, `orig_people`, `orig_registrations`, `orig_reg_history`, `orig_checkins`, `orig_interactions`, `orig_targets`
 
-> **To complete:** which values come from the provided dataset and which are simulated.
+The `orig_*` tables hold the supplied synthetic 2025 data. The 2026 campaign settings, campaigns, daily metrics and tasks are simulated for this assessment.
 
 ## Setup
 
@@ -351,7 +307,9 @@ On Vercel, set `GEMINI_API_KEY` as an environment variable. Chat routes are in `
 
 React, TypeScript, Vite, Tailwind CSS, Express (local), Vercel Functions, Supabase, Google Gemini (`@google/genai`). Project started from the Google AI Studio template.
 
-> **To complete:** plans used, other AI tools, and what you reused, modified and verified.
+Claude was used to help with the Vercel API routes, chart fixes, campaign decision rules, README and slide planning. Reused: the Google AI Studio template and the open-source libraries above.
+
+Checks on the code changes: type-check and production build, and screen checks with made-up test data. There are no automated tests.
 
 ## Known limitations
 
@@ -360,4 +318,3 @@ React, TypeScript, Vite, Tailwind CSS, Express (local), Vercel Functions, Supaba
 - The app has no login, and `/api/chat` has no rate limit.
 - The chat server accepts a Supabase URL and key sent by the browser.
 - No automated tests.
-
