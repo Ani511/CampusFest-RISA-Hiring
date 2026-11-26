@@ -7,261 +7,267 @@ Attendee-growth command center for a college festival in Bengaluru (Challenge A)
 Live app: https://campus-fest-risa-hiring.vercel.app/
 
 ## Strategy and research
+
 ### Why Bengaluru?
-Bengaluru was selected because it combines a large higher-education ecosystem with an established inter-collegiate cultural-festival network.
 
-- The AISHE 2023–24 data reports 1,148 colleges in Bengaluru Urban, making it a substantial campus-acquisition market.
-- A separate AISHE-based district estimate reports approximately 0.8 million higher-education enrolments. This is the broad market opportunity, not the number of students who can realistically be acquired for one festival.
-- Existing cultural events demonstrate that students already participate in inter-collegiate experiences. Examples include CHRIST University's InBloom, St. Joseph's College of Commerce's Dhwani, Jyoti Nivas College's Scintillation, Mount Carmel College's Cul-AH, PES University's MAAYA and BMS College of Commerce and Management's Samskruthi.
+Bengaluru was selected as the proposed host city because it is a Tier 1
+city with a dense college base and a strong student-event culture. The
+growth plan therefore focuses on campus-led distribution, student
+referrals, college partnerships and relevant student communities.
+
+The city rationale is a qualitative strategic choice in this assessment.
+The presentation does not quantify the addressable student population or
+claim that any college has confirmed a partnership.
+
+### Audience and growth opportunity
+
+The plan uses the supplied CampusFest 2025 dataset as its historical
+benchmark and sets two 2026 planning scenarios.
+
+  Funnel stage                      2025 actual   2026 base   2026 stretch
+  ---------------------------- ---------------- ----------- --------------
+  Identified external people              3,625       3,625          4,345
+  Registrations                           2,800       2,800          3,356
+  Registered attendees           1,925 (68.75%)       1,925          2,307
+  Walk-ins                                  125         125            125
+  **Unique attendees**                **2,050**   **2,050**      **2,432**
+
+The stretch scenario targets 382 additional unique attendees, an 18.6%
+increase over the base case. It assumes 2,307 registered attendees plus
+125 walk-ins.
+
+The base case retains the 2025 actual attendance level. The stretch case
+requires stronger acquisition and show-up performance; it is a planning
+scenario, not a guaranteed forecast.
+
+### Historical channel benchmarks
+
+The supplied synthetic 2025 dataset provides the following channel-level
+attendee and spend-per-attendee benchmarks used to prioritise the 2026
+plan.
+
+  Audience source          2025 attendees   Spend per attendee (SBRM)
+  ---------------------- ---------------- ---------------------------
+  Referrals                           275                         ₹69
+  Organic search                      195                         ₹72
+  College partnerships                385                         ₹81
+  Community groups                    165                         ₹97
+  Ambassadors                         390                        ₹108
+  Paid social                         340                        ₹274
+  Creators                            175                        ₹337
+
+The historical figures favour referrals, organic search and college
+partnerships on attributed cost per attendee. Paid social and creator
+activity were materially more expensive. The deck also uses historical
+registered-to-attended rates of 78.6% for referrals, 85.6% for college
+partnerships, and approximately 50% for paid social and creators.
+
+These are historical attribution benchmarks from the assessment-provided
+synthetic dataset. They are not causal estimates of incremental impact,
+and should not be interpreted as guaranteed 2026 acquisition costs or
+show-up rates.
+
+### Budget scenarios
+
+The stretch target of 2,432 unique attendees is estimated to require
+₹70,000 above the 2025 marketing spend of ₹2,74,000, implying a total
+budget of ₹3,44,000.
+
+If the available budget is capped at ₹3,00,000, the plan proposes
+reallocating ₹44,000 from paid social and creator spend towards the
+higher-efficiency growth bets. Under the presentation's assumptions,
+this produces approximately 2,283 unique attendees rather than the full
+2,432 stretch target.
+
+The reallocation estimate is a scenario calculation, not a validated
+forecast. It depends on historical channel efficiency and the assumption
+that additional spend is approximately half as efficient as the 2025
+benchmark.
+
+### Five ranked growth bets
+
+The five initiatives are ranked by estimated incremental attendees per
+₹1,000 of additional spend. The plan assumes that added spend is 2× less
+efficient than the 2025 benchmark.
+
+  --------------------------------------------------------------------------------------
+           Rank Growth idea              Budget   Gross extra Timeline   Test and
+                                                    attendees            primary KPI
+  ------------- ----------------- ------------- ------------- ---------- ---------------
+              1 Show-up booster:        ₹10,000            91 Days 1--21 Use a holdout
+                WhatsApp                                                 group; test
+                reconfirmation,                                          whether show-up
+                QR pass and                                              improves from
+                friend-group                                             68.75% to 72%
+                reminders                                                
+
+              2 Referral squads:        ₹15,000           109 Days 1--14 Track cost per
+                reward a referral                                        expected
+                when the friend                                          attendee
+                attends                                                  
+
+              3 College club            ₹25,000           154 Days 1--14 Pilot across
+                group passes                                             three colleges;
+                                                                         track group
+                                                                         confirmations
+
+              4 Community group          ₹5,000            26 Days 4--14 Track sign-up
+                takeovers with                                           and opt-out
+                opt-out                                                  rates
+
+              5 Ambassador campus       ₹15,000            69 Days 4--18 Track
+                sprints                                                  registrations
+                                                                         per ambassador
+
+                **Total**           **₹70,000** **449 gross**            
+  --------------------------------------------------------------------------------------
 
-The strategy therefore prioritises campus networks, student communities and peer-led distribution rather than relying entirely on paid advertising.
+A 15% overlap discount is applied to the 449 gross incremental attendees
+to account for people reached by more than one initiative. This gives an
+estimated **382 net additional attendees**.
+
+The overlap adjustment is a planning assumption. In execution, unique
+referral codes, partner links and deduplicated attendee records should
+be used to measure overlap more accurately.
+
+### Prioritisation and trade-offs
+
+The plan doubles down on referrals and college partnerships because they
+had comparatively low historical spend per attendee and strong
+registered-to-attended rates (78.6% and 85.6%, respectively).
+
+It deprioritises additional paid social and creator spend because their
+historical spend per attendee was higher (₹274 and ₹337, respectively),
+with approximately 50% show-up.
+
+The five growth bets also address different points in the funnel:
+
+-   Show-up booster improves attendance conversion among people already
+    registered.
+-   Referral squads acquire new attendees through peer recommendations.
+-   College club group passes build concentrated campus-level
+    acquisition.
+-   Community group takeovers reach relevant student communities.
+-   Ambassador campus sprints create repeatable distribution across
+    campuses.
+
+Key risks are referral fraud, overlap between college and ambassador
+leads, and message fatigue. The plan therefore uses attendance-based
+referral rewards, unique tracking links and opt-out controls.
+
+### Experiment thresholds and operating decisions
+
+The presentation defines early signals and decision thresholds for each
+initiative.
+
+  -----------------------------------------------------------------------------
+  Initiative   Early signal               Scale          Change            Stop
+  ------------ ---------------- --------------- --------------- ---------------
+  Show-up      Reconfirmation              70%+         50--69%       Under 50%
+  booster      rate                                             
+
+  Referral     Cost per            ₹138 or less       ₹139--173       Over ₹173
+  squads       expected                                         
+               attendee                                         
+
+  College      Cost per            ₹162 or less       ₹163--203       Over ₹203
+  passes       expected                                         
+               attendee                                         
+
+  Community    Cost per            ₹194 or less       ₹195--243       Over ₹243
+  takeovers    expected                                         
+               attendee                                         
+
+  Ambassador   Cost per            ₹216 or less       ₹217--270       Over ₹270
+  sprints      expected                                         
+               attendee                                         
+  -----------------------------------------------------------------------------
+
+The broader campaign rules in the dashboard are:
+
+-   **Stop:** below 60% of target and cost above 1.25× the average.
+-   **Change:** below 90% of target or a bottleneck is detected.
+-   **Scale:** at least 90% of target, no bottleneck, cost at or below
+    average, and budget remaining.
+-   **Keep:** all other cases.
+
+When scaling, add budget in small steps. When changing a campaign,
+address the weakest funnel stage and retest after four days. When
+stopping, move unspent budget to the strongest-performing initiative.
+
+These thresholds are management rules chosen for the assessment, not
+statistically validated cut-offs. They should be revisited as real
+campaign data accumulates.
+
+### Product feedback loop
+
+The Growth Center is intended to operationalise the strategy through a
+continuous decision-and-execution loop:
+
+1.  Log daily campaign data.
+2.  Update the funnel and attendee projections.
+3.  Diagnose campaign performance and recommend Scale, Keep, Change or
+    Stop.
+4.  Use the AI analyst to explain the recommendation using campaign
+    data.
+5.  Ask the user to confirm a proposed task.
+6.  Assign the task to an owner for execution.
+7.  Feed the next round of daily data back into the dashboard.
+
+This connects campaign measurement to execution rather than treating the
+dashboard as a passive reporting tool.
+
+### Data sources and assumptions
+
+1. **Provided assessment data** - The CampusFest 2025 dataset supplied with
+the assessment is the historical benchmark for funnel volumes,
+channel-attributed attendees, spend per attendee and show-up
+comparisons. - The dataset is synthetic, as stated in the supplied
+source workbook. It should not be represented as actual observed results
+from a real festival.
+
+2. **Planning assumptions** - The 2026 base and stretch funnel values are
+scenario targets. - The ₹70,000 growth budget, initiative-level budgets
+and estimated incremental attendees are proposed planning inputs. - The
+assumption that added spend is 2× less efficient than the 2025 benchmark
+is a modelling choice. - The 15% audience-overlap discount is an
+assumption pending deduplicated campaign-level measurement. - The
+₹3,00,000 budget-cap scenario and approximately 2,283 attendee outcome
+are estimates based on the proposed reallocation. - Venue capacity must
+be validated against the selected venue's permitted capacity and the
+distribution of attendance across event days.
+
+3. **Research limitation** The presentation's Bengaluru rationale is
+qualitative. It does not include a sourced campus-by-campus market-size
+calculation or evidence of confirmed institutional partnerships. Those
+should be validated before treating the audience opportunity as a
+measured market.
+
+### Research references
+
+The following sources can support further validation of Bengaluru's
+higher-education ecosystem and the cited campus-festival examples. The
+festival examples establish that these institutions have hosted or
+promoted relevant events; they do not establish a partnership with
+CampusFest.
+
+1.  Ministry of Education, Government of India --- AISHE reports and
+    higher-education statistics:
+    https://www.pib.gov.in/PressReleasePage.aspx?PRID=2282525
+2.  New Indian Express --- Bengaluru Urban college count based on AISHE
+    2023--24:
+    https://www.newindianexpress.com/cities/bengaluru/2026/Jul/14/karnataka-bengaluru-lead-in-higher-education
+3.  CHRIST University --- InBloom: https://inbloom.christuniversity.in/
+4.  St. Joseph's College of Commerce --- Cultural Facilities / Dhwani:
+    https://web.sjcc.edu.in/Cultural_Facilities.php
+5.  Jyoti Nivas College --- Scintillation:
+    https://scintillation.jyotinivas.org/
+6.  Mount Carmel College --- Cul-AH 2026 brochure:
+    https://mountcarmeluniversity.edu.in/wp-content/uploads/2026/02/cul-ah-brochure-26.pdf
+7.  PES University --- MAAYA: https://clubs.pes.edu/maaya/about/
+8.  BMS College of Commerce and Management --- Samskruthi:
+    https://www.bmsccm.ac.in/menu/happenings/samskruthi.html
 
-### Market sizing and target audiences
-The following is a planning model, not a claim that all these students have been individually verified or contacted.
-
-| Market layer | Size | Definition |
-|---|---:|---|
-| TAM | ~800,000 | Approximate higher-education enrolment across Bengaluru district |
-| SAM | ~60,000 | Estimated reachable student pool across the initial target-campus network |
-| Base SOM | 2,050 | Unique verified attendee target |
-| Stretch SOM | 2,432 | Stretch unique verified attendee target |
-
-The 60,000 SAM is a working assumption for planning. Campus-wise enrolment, eligibility and audience overlap need further validation before it can be treated as a measured market size.
-
-**Primary audience segments**
-
-| Segment | Estimated pool | Share of SAM | Acquisition approach |
-|---|---:|---:|---|
-| Campus socialisers and friend groups | 18,000 | 30% | Referral links, group passes and social content |
-| Cultural and performance enthusiasts | 15,000 | 25% | College clubs, event communities and creator content |
-| Student club members and competition participants | 12,000 | 20% | College partnerships and contingent registrations |
-| Creative, arts and literary communities | 9,000 | 15% | Relevant societies, workshops and campus ambassadors |
-| Nearby-campus explorers and first-time fest attendees | 6,000 | 10% | Community groups, organic discovery and targeted campaigns |
-| **Total** | **60,000** | **100%** | |
-
-These are mutually exclusive planning buckets based on a person's primary motivation; actual interests can overlap. The segment sizes are assumptions, not published college enrolment statistics.
-
-**Target-campus network**
-
-Initial outreach prospects include:
-
-- Central Bengaluru: CHRIST University, St. Joseph's College of Commerce and Mount Carmel College.
-- South Bengaluru: Jyoti Nivas College and CHRIST University's Bannerghatta campus.
-- South-west Bengaluru: BMS College of Commerce and Management and PES University.
-- North Bengaluru: St. Claret College.
-
-These are prospecting priorities, not confirmed distribution partners. Their cultural-fest activity provides evidence of an existing student-event ecosystem, but partnerships and access still need to be secured.
-
-### Five ranked growth strategies
-
-The ranking uses the supplied 2025 dataset's first-touch campaign attribution as an initial efficiency benchmark. Cost per verified attendee is calculated as campaign spend divided by unique verified external attendees attributed to that campaign.
-
-| Rank | Strategy | 2025 attributed cost per verified attendee | 2026 planned budget | 2026 target attendees |
-|---:|---|---:|---:|---:|
-| 1 | Student referral loops | ₹69 | ₹34,000 | 393 |
-| 2 | Organic search and discovery | ₹72 | ₹21,000 | 250 |
-| 3 | College partnerships and club activations | ₹81 | ₹41,000 | 457 |
-| 4 | Student community distribution | ₹97 | ₹19,000 | 185 |
-| 5 | Campus ambassador network | ₹108 | ₹42,000 | 400 |
-| | **Total** | | **₹1,57,000** | **1,685** |
-
-The remaining planned budget is allocated to Paid Social (₹61,000), Creator Partners (₹59,000), Show-up and Reconfirmation Operations (₹13,000) and the Alumni and Local Groups Pilot (₹10,000).
-
-Paid Social and Creator Partners remain testable channels, but their historical first-touch cost per verified attendee was substantially higher (approximately ₹274 and ₹337 respectively). Their budgets should therefore be governed by incremental-lift tests rather than scaled automatically.
-
-**Prioritisation framework**
-
-Ideas are evaluated on four dimensions:
-
-1. Historical acquisition efficiency — 35%: cost per verified attendee in the supplied dataset.
-2. Scalability — 25%: potential to reach additional students and campuses.
-3. Measurement quality — 20%: ability to attribute registrations and verify incremental attendance.
-4. Time to impact — 20%: ability to generate attendance before the event.
-
-Historical attribution is a useful starting point, not proof of incremental impact. A referral or campus partnership may receive credit for a person who would have attended anyway. The tests below are designed to address that limitation.
-
-### Test plans and KPIs
-
-**1. Student referral loops**
-
-- Test unique referral links or codes and a referral incentive against a no-incentive control group.
-- Track invitations, referred registrations, confirmed registrations and verified attendance.
-- Primary KPI: incremental verified attendees per rupee spent.
-- Supporting KPIs: referral conversion rate, referred-attendee show-up rate and cost per incremental attendee.
-- Scale when the test produces positive incremental lift and meets the acquisition-cost benchmark.
-
-**2. Organic search and discovery**
-
-- Test event-specific landing-page headlines, programme information and search-friendly content.
-- Use distinct UTM links to distinguish organic discovery from other channels.
-- Primary KPI: verified attendees attributed to organic discovery and cost per verified attendee.
-- Supporting KPIs: organic sessions, registration conversion and branded search traffic.
-- Improve landing-page content if sessions grow without a corresponding increase in registrations.
-
-**3. College partnerships**
-
-- Recruit student clubs, cultural societies and college representatives.
-- Give each partner a unique registration link or QR code.
-- Pilot activation in a subset of campuses and compare it with similar campuses without activation.
-- Primary KPI: incremental verified attendees per activated campus.
-- Supporting KPIs: partner activation rate, contingent registrations and attendance conversion.
-
-**4. Student community distribution**
-
-- Test different event messages across relevant student communities.
-- Use group-specific links to compare programme-led, social-experience-led and urgency-led messaging.
-- Primary KPI: verified attendees per community and acquisition spend.
-- Supporting KPIs: link clicks, landing-page-to-registration conversion and attendance rate.
-- Stop placements that generate engagement but no meaningful registration or attendance lift.
-
-**5. Campus ambassador network**
-
-- Pilot a small ambassador cohort before expanding the programme.
-- Assign unique codes to each ambassador and track weekly activity.
-- Compare active ambassadors with a matched group that has not yet received the activation package.
-- Primary KPI: incremental verified attendees per active ambassador.
-- Supporting KPIs: registrations per ambassador, conversion rate, cancellation rate and cost per verified attendee.
-
-### Measurement and decision rules
-
-The North Star metric is **incremental verified external attendees per rupee spent**.
-
-The supporting funnel is:
-
-**Identified people → Registrations → Confirmed registrations → Projected attendees → Verified actual attendees**
-
-Impressions, clicks and landing-page sessions are anonymous activity measures. They are useful for diagnosing acquisition performance but must not be counted as unique people.
-
-The 2025 blended historical marketing cost per verified external attendee was approximately ₹134 (₹274,000 / 2,050). This is a benchmark, not a guaranteed 2026 acquisition cost.
-
-For experiments, the initial decision gates are:
-
-- **Scale:** positive measured incremental lift, with incremental acquisition cost at or below the historical blended benchmark.
-- **Change:** evidence of interest but weak conversion, attendance or acquisition efficiency.
-- **Stop:** no meaningful incremental lift after the planned test period, or acquisition cost materially above the benchmark without a strategic reason to continue.
-
-These are management thresholds, not statistical significance claims. Tests should use appropriate sample sizes and holdout groups wherever feasible.
-
-## Data and assumptions
-
-### 1. Provided dataset: historical CampusFest 2025
-
-The original `Attendee Dataset.xlsx` was supplied as part of the assessment. Its Read me sheet explicitly identifies CampusFest 2025 as a fictional two-day event and states that all people and campaign activity are synthetic.
-
-The historical data covers 15 January–20 April 2025, with the event scheduled for 12–13 April 2025.
-
-The following figures are derived from the supplied dataset:
-
-| Historical measure | Value |
-|---|---:|
-| Identified external people | 3,625 |
-| Completed registrations | 2,840 |
-| Unique verified external attendees | 2,050 |
-| Marketing expenditure | ₹2,74,000 |
-| Revised registration target | 3,200 |
-| Revised unique external visitor target | 2,200 |
-| Revised marketing budget | ₹3,00,000 |
-
-Campaign-level historical spend and attendee attribution are also derived from the supplied data. Stable IDs are used to join entities, and distinct people are counted using `person_id`. Verified attendance requires an admitted and verified check-in; repeated admission records for the same person do not create additional unique attendees.
-
-The historical campaign benchmarks are attribution-based comparisons. They should not be interpreted as causal estimates of incremental channel performance.
-
-### 2. Simulated CampusFest 2026 scenario
-
-The `campaigns`, `daily_metrics`, `tasks` and `settings` tables represent the forward-looking CampusFest 2026 operating scenario.
-
-These values are scenario inputs and should not be represented as observed real-world results.
-
-| Value | Source / treatment |
-|---|---|
-| Event name and city | Scenario configuration |
-| As-of date: 21 March 2026 | Simulated snapshot date in settings |
-| Event date: 11 April 2026 | Scenario configuration |
-| Event duration: 2 days | Scenario assumption |
-| Total budget: ₹3,00,000 | Simulated planning budget |
-| Base attendee target: 2,050 | Scenario target |
-| Stretch attendee target: 2,432 | Scenario target |
-| Venue capacity: 2,500 per day | Scenario assumption |
-| Walk-in allowance: 125 | Scenario assumption |
-| 2026 campaign budgets and targets | Simulated campaign plan |
-| 2026 daily metrics | Simulated campaign activity |
-| Assumed show-up rates | Campaign-level scenario inputs |
-| Task owners, deadlines and statuses | Execution-tracker seed data |
-
-The 2025 dataset informs the 2026 campaign design and initial efficiency benchmarks. It does not establish that the simulated 2026 campaign activity has actually occurred.
-
-### 3. Important limitations of the assumptions
-
-- Historical first-touch attribution does not prove that a channel caused the attendee to come.
-- The 2026 assumed show-up rates are planning inputs informed by historical registered-to-attended performance; they are not guaranteed outcomes.
-- The projection assumes that recent registration pace continues until the event.
-- The walk-in allowance is a planning input and should be replaced by actual walk-in data when available.
-- Capacity is modelled as 2,500 attendees per day. A two-day capacity of 5,000 person-visits is not necessarily 5,000 unique attendees.
-- The 60,000 SAM and its segment allocations are market-sizing assumptions that require campus-level validation.
-- The current projection does not reduce expected attendance for cancellations; this is a known limitation.
-
-## Tools, plans and AI usage
-
-| Tool | Role in the project |
-|---|---|
-| Supabase | PostgreSQL database, relational tables and persistent application data |
-| Google Gemini API (`@google/genai`) | AI growth analyst with function calling |
-| Google AI Studio | Starting project template and Gemini development workflow |
-| Vercel | Deployment and serverless chat API |
-| React, TypeScript, Vite and Tailwind CSS | Frontend application |
-| Express | Local development server |
-
-The project uses the connected Supabase database as the application data source. Gemini function calls are designed to retrieve campaign information, calculate metrics and propose execution tasks. Task creation requires user confirmation.
-
-**Plans and costs:** The project uses the service plans configured in the respective accounts. Record the actual Lovable, Supabase, Vercel and Gemini API tiers used for submission; free-tier quotas and API limits may apply and can change. No paid third-party market-data source was used for the market-sizing assumptions.
-
-### What was reused, modified and verified
-
-**Reused**
-- The assessment-provided CampusFest 2025 source tables were retained in Supabase under the `orig_` table names.
-- Historical campaign, people, registration, status-history, check-in and marketing activity records were used as the benchmark dataset.
-- The original dataset's stable IDs and data definitions informed the joins and attendance calculations.
-
-**Modified or added**
-- A separate CampusFest 2026 campaign scenario was created.
-- New campaign budgets, targets, audience descriptions, owners and assumed show-up rates were added.
-- A simulated as-of date, event date, budget, venue capacity, walk-in allowance, base target and stretch target were configured in `settings`.
-- Daily campaign activity and execution tasks were added for the simulated operating scenario.
-- The original 2025 records were retained separately from the 2026 scenario data.
-
-
-## Research sources
-
-1. **Ministry of Education — AISHE 2022–23 and 2023–24 reports:** official source describing AISHE as the primary source of higher-education statistics in India.  
-   https://www.pib.gov.in/PressReleasePage.aspx?PRID=2282525
-
-2. **New Indian Express — Karnataka and Bengaluru lead in higher education:** reports 1,148 colleges in Bengaluru Urban based on AISHE 2023–24.  
-   https://www.newindianexpress.com/cities/bengaluru/2026/Jul/14/karnataka-bengaluru-lead-in-higher-education
-
-3. **Bengaluru higher-education market data:** district-level enrolment and HEI figures based on AISHE 2023–24 data.  
-   https://nsearchives.nseindia.com/corporate/Registration_29092025062424_ProjectScholarspaceConsolidatedDRHP.pdf
-
-4. **CHRIST University — InBloom:** official annual cultural-festival information.  
-   https://inbloom.christuniversity.in/
-
-5. **St. Joseph's College of Commerce — Cultural Facilities:** official information on Dhwani, its inter-collegiate cultural fest, and student associations.  
-   https://web.sjcc.edu.in/Cultural_Facilities.php
-
-6. **Jyoti Nivas College — Scintillation:** official national-level inter-collegiate cultural-fest information.  
-   https://scintillation.jyotinivas.org/
-
-7. **Mount Carmel College — Cul-AH 2026:** official cultural-fest brochure.  
-   https://mountcarmeluniversity.edu.in/wp-content/uploads/2026/02/cul-ah-brochure-26.pdf
-
-8. **PES University — MAAYA:** official information on its inter-collegiate techno-cultural festival.  
-   https://clubs.pes.edu/maaya/about/
-
-9. **BMS College of Commerce and Management — Samskruthi:** official information on its inter-collegiate management and cultural festival.  
-   https://www.bmsccm.ac.in/menu/happenings/samskruthi.html
-
-10. **Assessment-provided source:** `Attendee Dataset.xlsx`, including the Read me, Field guide, Event, Targets, Campaigns, Daily Marketing, People, Interest and Engagement, Registrations, Registration History and Check-ins sheets.
-
-All market-size estimates, 2026 targets, campaign budgets and simulated activity are explicitly distinguished from the published sources and the supplied historical dataset.
 
 
 ## What the product does
@@ -354,3 +360,4 @@ React, TypeScript, Vite, Tailwind CSS, Express (local), Vercel Functions, Supaba
 - The app has no login, and `/api/chat` has no rate limit.
 - The chat server accepts a Supabase URL and key sent by the browser.
 - No automated tests.
+
