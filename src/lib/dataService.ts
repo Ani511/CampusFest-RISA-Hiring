@@ -1,5 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { parseSettingsRows } from './analytics';
+import { parseSettingsRows } from './analytics.js';
 import type {
   Campaign,
   CampaignKind,
@@ -8,7 +8,7 @@ import type {
   Task,
   TaskSchemaHints,
   TaskStatus,
-} from '../types/growth';
+} from '../types/growth.js';
 
 export interface GrowthDataPayload {
   settings: GrowthSettings;

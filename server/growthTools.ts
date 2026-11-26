@@ -7,7 +7,7 @@ import {
   formatPct,
   normalizeShowupRate,
   parseSettingsRows,
-} from '../src/lib/analytics.ts';
+} from '../src/lib/analytics.js';
 import type {
   Campaign,
   CampaignComputed,
@@ -16,7 +16,7 @@ import type {
   Task,
   TaskSchemaHints,
   WindowFunnelMetrics,
-} from '../src/types/growth.ts';
+} from '../src/types/growth.js';
 
 export interface ProposedTaskPayload {
   id: string;

@@ -7,7 +7,7 @@ import type {
   DiagnosisStatus,
   GrowthSettings,
   WindowFunnelMetrics,
-} from '../types/growth';
+} from '../types/growth.js';
 
 const MS_PER_DAY = 86_400_000;
 

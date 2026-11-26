@@ -5,7 +5,7 @@ import {
   type Part,
 } from '@google/genai';
 import { createClient } from '@supabase/supabase-js';
-import { SUPABASE_ANON_KEY, SUPABASE_URL } from '../src/config/supabase.ts';
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from '../src/config/supabase.js';
 import {
   executeGrowthTool,
   growthToolDeclarations,
@@ -13,13 +13,13 @@ import {
   withTimeout,
   type ProposedTaskPayload,
   type ToolExecutionContext,
-} from './growthTools.ts';
+} from './growthTools.js';
 import {
   createGeminiClient,
   dropModelFromList,
   getAvailableModels,
   type GeminiModelInfo,
-} from './modelRegistry.ts';
+} from './modelRegistry.js';
 
 const GEMINI_TIMEOUT_MS = 30_000;
 const MAX_TOOL_ROUNDS = 6;

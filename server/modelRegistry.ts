@@ -1,5 +1,5 @@
 import { GoogleGenAI, type Model } from '@google/genai';
-import { TimeoutError, withTimeout } from './growthTools.ts';
+import { TimeoutError, withTimeout } from './growthTools.js';
 
 export interface GeminiModelInfo {
   id: string;
