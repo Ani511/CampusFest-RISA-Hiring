@@ -1,7 +1,8 @@
 # CampusFest 2026 Growth Center
 
 Attendee-growth command center for a college festival in Bengaluru (Challenge A): analytics dashboard, campaign diagnosis, execution tracker and an AI growth analyst.
-**Prepared by:** Ananya Mondal
+
+## Prepared by: Ananya Mondal | 23CE10011 | IITKGP
 
 Live app: https://campus-fest-risa-hiring.vercel.app/
 
