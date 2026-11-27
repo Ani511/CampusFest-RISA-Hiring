@@ -4,8 +4,8 @@ Attendee-growth command center for a college festival in Bengaluru (Challenge A)
 
 ## Prepared by: Ananya Mondal | 23CE10011 | IITKGP
 
-Live app: https://campus-fest-risa-hiring.vercel.app/
-Github Repo: https://github.com/Ani511/CampusFest-RISA-Hiring
+- Live app: https://campus-fest-risa-hiring.vercel.app/
+- Github Repo: https://github.com/Ani511/CampusFest-RISA-Hiring
 
 ## Strategy and research
 
