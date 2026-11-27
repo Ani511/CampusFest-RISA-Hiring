@@ -5,6 +5,7 @@ Attendee-growth command center for a college festival in Bengaluru (Challenge A)
 ## Prepared by: Ananya Mondal | 23CE10011 | IITKGP
 
 Live app: https://campus-fest-risa-hiring.vercel.app/
+Github Repo: https://github.com/Ani511/CampusFest-RISA-Hiring
 
 ## Strategy and research
 
@@ -95,6 +96,21 @@ The five initiatives are ranked by estimated incremental attendees per ₹1,000 
 | 4 | Community group takeovers with opt-out | ₹5,000 | 26 | 5.2 | Days 4–14 | Sign-up and opt-out rates |
 | 5 | Ambassador campus sprints | ₹15,000 | 69 | 4.6 | Days 4–18 | Registrations per ambassador |
 |  | **Total** | **₹70,000** | **449 gross** |  |  |  |
+
+## Chatbot test log
+
+The analyst was tested on live data, changed data, missing data and a false premise. Problems found during testing and how they were fixed are listed with the results. Figures are from the seeded data as of 21 Mar 2026.
+
+| Test | What the analyst did | Result |
+|---|---|---|
+| "How are we pacing toward the base and stretch targets?" | Called `get_overall_funnel` | 2,166 projected = 2,041 from campaigns + 125 walk-ins; 105.7% of base and 89.1% of stretch. First version invented a "593" component; fixed by returning the projection components from the tool and adding a rule not to invent intermediate numbers. |
+| "Which campaign is worst and why?" then "And vs last week?" | Used diagnosis and campaign metrics | Creator Partners, 64.3% of target. It named the 50% assumed show-up as the main driver, then compared registrations (44 to 36) and cancel rate week on week. |
+| "What was our 2025 cost per attendee by campaign?" | Queried the original 2025 tables | Student Referrals INR 69.09 (19,000 / 275), matching an independent calculation from the source workbook. |
+| "What's our NPS?" and "Which college sends the most attendees?" | No tool can answer | Refused and said what data is missing (survey data, college affiliation). |
+| "Why did Creator Partners outperform Paid Social?" (false premise) | Compared both campaigns | Corrected the premise ("No: 64.3% of target vs 93.1%, INR 452 vs INR 183 per expected attendee"). The first version recommended scaling Creators; fixed with a rule that recommendations must match the verdict. |
+| Changed data: logged 200 registrations for Student Referrals | Re-queried live data | Projected attendees moved from 2,166 to 2,795, identical on the dashboard and in the chat. The test row was deleted afterwards. |
+| "Why are Paid Social registrations dropping?" | Compared funnel stages for the last 7 days vs the previous 7 | Traffic was flat but registration starts to registrations fell from 29% to 20%, so the leak is at registration completion. It found the overdue audit task and proposed a task; after confirmation it appeared under Tasks as "Created by analyst" and persisted after a refresh. |
+| "If I move INR 20,000 from Paid Social to Student Referrals, what happens?" | Checked remaining budget first | Only INR 10,626 was unspent, so it simulated that amount instead and labelled the result an assumption, not a forecast. |
 
 Calculations:
 
@@ -287,6 +303,28 @@ Stored in Supabase.
 
 The `orig_*` tables hold the supplied synthetic 2025 data. The 2026 campaign settings, campaigns, daily metrics and tasks are simulated for this assessment.
 
+### Reset the demo data
+
+Evaluators may edit data in the live app. To restore the original seeded state:
+
+1. In the Supabase SQL Editor run:
+   ```sql
+   truncate daily_metrics, tasks, campaigns, settings cascade;
+   ```
+2. Re-import the CSVs from the `/data` folder into the existing tables (Table Editor > the table > Insert > Import data from CSV), in this order: `campaigns.csv`, `daily_metrics.csv`, `tasks.csv`, `settings.csv`.
+3. Run these two statements to apply the final adjustments to the seeded data:
+   ```sql
+   update daily_metrics
+   set spend = round(spend * 61.0 / 93.0)
+   where campaign_id = (select id from campaigns where code = 'C02');
+
+   update daily_metrics d
+   set expected_attendees = d.registrations * c.assumed_showup
+   from campaigns c where c.id = d.campaign_id;
+   ```
+
+The `orig_*` tables (the supplied 2025 data) are read-only in the app and do not need resetting.
+
 ## Setup
 
 Needs Node.js and Bun.
@@ -318,3 +356,6 @@ Checks on the code changes: type-check and production build, and screen checks w
 - The app has no login, and `/api/chat` has no rate limit.
 - The chat server accepts a Supabase URL and key sent by the browser.
 - No automated tests.
+- Row-level security is disabled for the demo, so anyone with the link can edit data. This lets reviewers test changed data; it must be enabled with proper policies before real use.
+- The projection extrapolates the last 7 days linearly, so one unusually large day swings it sharply (for example, a single 200-registration day moved the total from 2,166 to 2,795).
+- The analyst runs on a free-tier Gemini model and can occasionally return a 503 or 429 when the model is busy; the app retries and falls back to another model.
